@@ -19,6 +19,8 @@ https://github.com/guibor/supernote-half-size
 
 It does one thing: after you lasso-select content, tap **Half Size** in the lasso toolbar and the active selection is resized proportionally around its center. The default ratio is 50%, and there is also a toolbar/sidebar configuration screen for changing the ratio before you use it.
 
+I have tested the `v0.1.1` build on my Supernote and it is working well for the basic lasso-resize flow.
+
 Why I built it:
 
 - Sometimes pasted snippets, diagrams, or handwritten groups are just too large.
@@ -46,5 +48,5 @@ The implementation is intentionally small so other plugin developers can inspect
 3. `PluginCommAPI.resizeLassoRect(nextRect)`
 4. Best-effort `PluginCommAPI.setLassoBoxState(0)` to keep the resized selection visible.
 
-This is an initial build, so I would be interested in feedback on how `resizeLassoRect` behaves with mixed selections, especially in DOC and with selections containing images or text boxes.
+I would still be interested in feedback on how `resizeLassoRect` behaves with mixed selections, especially in DOC and with selections containing images or text boxes.
 ```

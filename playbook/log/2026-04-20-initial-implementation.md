@@ -32,3 +32,9 @@ persistence for the first build because the priority is validating
 - Guard the resize listener so it only handles the lasso-toolbar button press.
 - Bumped to `0.1.1` / `versionCode=2` before final device upload so the device
   can distinguish the hardened build from the first test package.
+
+## Device Validation
+
+The user tested `v0.1.1` on-device and reported that the plugin works well for
+the intended lasso-resize flow. Public-facing docs and the Reddit draft were
+updated to reflect that validation.

@@ -7,6 +7,8 @@ It uses the current `sn-plugin-lib` `PluginCommAPI.resizeLassoRect(rect)` API.
 That API requires an existing lasso context, so this plugin only acts on an
 active selection.
 
+Status: tested successfully on a Supernote device with the `v0.1.1` build.
+
 ## What It Does
 
 - Adds a `Half Size` configuration button to the NOTE and DOC toolbar/sidebar.
@@ -41,6 +43,12 @@ build/outputs/supernote_half_size.snplg
 
 Copy the `.snplg` file to `MyStyle/` on the Supernote, then install it from
 Settings -> Apps -> Plugins.
+
+The latest packaged build is attached to the GitHub release:
+
+```text
+https://github.com/guibor/supernote-half-size/releases/tag/v0.1.1
+```
 
 ## Implementation Notes
 
