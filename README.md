@@ -21,11 +21,14 @@ active selection.
 - It does not create a selection for you; draw/select with lasso first.
 - It does not resize across pages.
 - It does not persist ratio changes across PluginHost restarts yet.
+- It does not implement an element-by-element fallback; this first build tests
+  the native Supernote `resizeLassoRect` path directly.
 
 ## Build
 
 ```sh
 npm install
+npm run lint -- --max-warnings=0
 npm run typecheck
 npm run build:plugin
 ```

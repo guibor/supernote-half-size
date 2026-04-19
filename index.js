@@ -17,19 +17,25 @@ const CONFIG_BUTTON_ID = 100;
 const RESIZE_SELECTION_BUTTON_ID = 200;
 const ICON_URI = Image.resolveAssetSource(require('./assets/icon.png')).uri;
 const ALL_LASSO_DATA_TYPES = [0, 1, 2, 3, 4, 5];
+const BUTTON_NAME = JSON.stringify({
+  en: 'Half Size',
+  zh_CN: 'Half Size',
+  zh_TW: 'Half Size',
+  ja: 'Half Size',
+});
 
 let isResizing = false;
 
 PluginManager.registerButton(1, ['NOTE', 'DOC'], {
   id: CONFIG_BUTTON_ID,
-  name: 'Half Size',
+  name: BUTTON_NAME,
   icon: ICON_URI,
   showType: 1,
 });
 
 PluginManager.registerButton(2, ['NOTE', 'DOC'], {
   id: RESIZE_SELECTION_BUTTON_ID,
-  name: 'Half Size',
+  name: BUTTON_NAME,
   icon: ICON_URI,
   editDataTypes: ALL_LASSO_DATA_TYPES,
   showType: 0,
@@ -37,7 +43,10 @@ PluginManager.registerButton(2, ['NOTE', 'DOC'], {
 
 PluginManager.registerButtonListener({
   onButtonPress: event => {
-    if (event.id !== RESIZE_SELECTION_BUTTON_ID) {
+    const isResizeButton = event?.id === RESIZE_SELECTION_BUTTON_ID;
+    const isLassoPress = event?.pressEvent === undefined || event.pressEvent === 3;
+
+    if (!isResizeButton || !isLassoPress) {
       return;
     }
 

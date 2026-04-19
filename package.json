@@ -1,7 +1,8 @@
 {
   "name": "supernote_half_size",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
+  "description": "Supernote plugin for proportionally resizing the active lasso selection.",
   "scripts": {
     "android": "react-native run-android",
     "build:plugin": "bash ./buildPlugin.sh",

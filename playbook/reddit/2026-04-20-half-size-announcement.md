@@ -5,7 +5,7 @@ Subreddit: `r/Supernote_dev`
 Title:
 
 ```text
-Half Size: resize a Supernote lasso selection to 50%
+Half Size: a tiny Supernote plugin for proportional lasso resizing
 ```
 
 Body:
@@ -17,7 +17,7 @@ I made a small Supernote plugin called **Half Size**:
 
 https://github.com/guibor/supernote-half-size
 
-It does one thing: after you lasso-select content, tap **Half Size** in the lasso toolbar and the active selection is resized proportionally around its center. The default ratio is 50%, and there is also a toolbar/sidebar configuration screen for changing the ratio.
+It does one thing: after you lasso-select content, tap **Half Size** in the lasso toolbar and the active selection is resized proportionally around its center. The default ratio is 50%, and there is also a toolbar/sidebar configuration screen for changing the ratio before you use it.
 
 Why I built it:
 
@@ -29,7 +29,7 @@ What it does:
 
 - NOTE and DOC toolbar/sidebar button for configuring the ratio.
 - NOTE and DOC lasso toolbar button for applying the resize.
-- Defaults to 50%, with presets for 25%, 50%, 75%, 100%, and 125%.
+- Defaults to 50%, with presets for 25%, 50%, 75%, 100%, and 125%, plus +/- 5% controls.
 - Uses the active lasso rectangle and scales it from the center.
 
 What it does *not* do:
@@ -37,6 +37,7 @@ What it does *not* do:
 - It does not create a lasso selection for you.
 - It does not resize across multiple pages.
 - It does not persist the ratio after PluginHost restarts yet; it returns to 50%.
+- It does not have an element-by-element fallback yet; this build intentionally tests the native `resizeLassoRect` path.
 
 The implementation is intentionally small so other plugin developers can inspect it or adapt the pattern. The core flow is:
 
@@ -45,5 +46,5 @@ The implementation is intentionally small so other plugin developers can inspect
 3. `PluginCommAPI.resizeLassoRect(nextRect)`
 4. Best-effort `PluginCommAPI.setLassoBoxState(0)` to keep the resized selection visible.
 
-This is an initial build, so I would be interested in feedback on how `resizeLassoRect` behaves with mixed selections, especially in DOC.
+This is an initial build, so I would be interested in feedback on how `resizeLassoRect` behaves with mixed selections, especially in DOC and with selections containing images or text boxes.
 ```
