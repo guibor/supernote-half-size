@@ -1,0 +1,10 @@
+{
+  "name": "Half Size",
+  "desc": "Resize the active Supernote lasso selection proportionally, defaulting to 50%.",
+  "iconPath": "assets/icon.png",
+  "versionName": "0.1.0",
+  "versionCode": "1",
+  "pluginID": "ncqsigp1xfg6uh0i",
+  "pluginKey": "supernote_half_size",
+  "jsMainPath": "index"
+}
