@@ -8,6 +8,7 @@ import {name as appName} from './app.json';
 import {getScaleRatio, ratioToScale} from './src/ratio';
 
 import {NativeUIUtils, PluginCommAPI, PluginManager} from 'sn-plugin-lib';
+import {ensurePermissions, FILE_WRITE_PERMISSION} from './permissions';
 
 AppRegistry.registerComponent(appName, () => App);
 
@@ -63,6 +64,7 @@ async function resizeCurrentSelection() {
 
   isResizing = true;
   try {
+    await ensurePermissions([FILE_WRITE_PERMISSION]);
     if (typeof PluginCommAPI.resizeLassoRect !== 'function') {
       throw new Error(
         'This plugin requires sn-plugin-lib with PluginCommAPI.resizeLassoRect.',

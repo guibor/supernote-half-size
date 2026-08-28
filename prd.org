@@ -1,0 +1,15 @@
+#+TITLE: Half Size Requirements
+
+* Requirements
+- Resize the active NOTE or DOC lasso around its center using a user-selected ratio.
+- Use SDK 0.1.65 and request file-write permission before modifying the selection.
+- Prevent duplicate concurrent resize operations and report failures on-device.
+
+* Requirements Changed
+** 2026-08-28
+The compatibility update expanded to release hygiene, permission UX, tests, and InkHub preparation.
+
+* Next Steps
+- [X] Build and validate version 0.2.0.
+- [ ] Verify every preset and permission-denial flow on current firmware.
+- [ ] Capture e-ink screenshots and concise store copy.
